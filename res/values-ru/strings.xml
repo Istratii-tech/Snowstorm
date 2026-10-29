@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="acc_desc">Рисует падающий снег поверх экрана. Каждая снежинка генерируется на лету и уникальна. Служба определяет только, какое приложение открыто, чтобы у каждого были свои сугробы. Ничего не читает, не нажимает и не отправляет — у приложения нет доступа к интернету.</string>
+
+    <string name="title">❄  Snowstorm</string>
+    <string name="subtitle">Снег поверх любых приложений. Каждая снежинка генерируется на лету и уникальна, а у каждого приложения — свои сугробы.</string>
+    <string name="service_on">✓ Служба Snowstorm работает</string>
+    <string name="service_off">Чтобы пошёл снег, включите Snowstorm в Настройки → Спец. возможности → Установленные приложения.</string>
+    <string name="open_accessibility">Открыть спец. возможности</string>
+    <string name="restricted_hint">Переключатель серый? Открыть «О приложении»</string>
+    <string name="start_snow">Запустить снег</string>
+    <string name="stop_snow">Остановить снег</string>
+    <string name="speed">Скорость падения</string>
+    <string name="count">Количество снежинок</string>
+    <string name="drift_height">Высота сугробов</string>
+    <string name="storm_mode">Режим «Шторм»</string>
+    <string name="storm_desc">Густой снег летит под наклоном с порывами ветра, сугробы растут быстрее.</string>
+    <string name="eco_mode">Экономный режим (30 к/с)</string>
+    <string name="eco_desc">Снег движется чуть менее плавно, зато заметно меньше нагрузка и расход батареи.</string>
+    <string name="how_title">Как убрать сугробы</string>
+    <string name="how_text">• Встряхните телефон — сугроб текущего приложения разлетится.\n• Или смахните приложение вверх от нижнего края (домой или в «Недавние») — сугроб тоже разлетится.\n• Сугроб растёт только у открытого приложения.</string>
+    <string name="melt_all">Растопить все сугробы</string>
+    <string name="melted">Все сугробы растаяли</string>
+
+    <string name="notif_title_on">Идёт снег</string>
+    <string name="notif_title_off">Snowstorm на паузе</string>
+    <string name="notif_text_on">Встряхните телефон, чтобы стряхнуть сугробы</string>
+    <string name="notif_text_storm">Режим «Шторм» · встряхните, чтобы стряхнуть сугробы</string>
+    <string name="notif_text_off">Снег остановлен</string>
+    <string name="notif_stop">Остановить</string>
+    <string name="notif_start">Запустить</string>
+    <string name="notif_settings">Настроить</string>
+</resources>

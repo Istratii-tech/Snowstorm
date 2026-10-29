@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Snowstorm</string>
+    <string name="acc_desc">Draws falling snow over the screen. Every snowflake is generated on the fly and is unique. The service only checks which app is open so that each app gets its own snowdrifts. It reads, taps and sends nothing, and the app has no internet access.</string>
+
+    <string name="title">❄  Snowstorm</string>
+    <string name="subtitle">Snow falls over any app. Every snowflake is generated on the fly and is unique, and each app collects its own snowdrifts.</string>
+    <string name="service_on">✓ The Snowstorm service is running</string>
+    <string name="service_off">To make it snow, turn on Snowstorm in Settings → Accessibility → Installed apps.</string>
+    <string name="open_accessibility">Open Accessibility settings</string>
+    <string name="restricted_hint">Switch greyed out? Open App info</string>
+    <string name="start_snow">Start snow</string>
+    <string name="stop_snow">Stop snow</string>
+    <string name="speed">Falling speed</string>
+    <string name="count">Number of snowflakes</string>
+    <string name="drift_height">Snowdrift height</string>
+    <string name="storm_mode">Storm mode</string>
+    <string name="storm_desc">Heavy snow flies at an angle with gusts of wind, and snowdrifts grow faster.</string>
+    <string name="eco_mode">Battery saver (30 fps)</string>
+    <string name="eco_desc">Snow moves a little less smoothly, but uses noticeably less power.</string>
+    <string name="how_title">How to clear snowdrifts</string>
+    <string name="how_text">• Shake the phone and the current app\'s snowdrift flies apart.\n• Or swipe the app up from the bottom edge (to Home or Recents) and it flies apart too.\n• A snowdrift only grows on the app that is open.</string>
+    <string name="melt_all">Melt all snowdrifts</string>
+    <string name="melted">All snowdrifts have melted</string>
+
+    <string name="notif_title_on">It\'s snowing</string>
+    <string name="notif_title_off">Snowstorm is paused</string>
+    <string name="notif_text_on">Shake the phone to shake off the snowdrifts</string>
+    <string name="notif_text_storm">Storm mode · shake to shake off the snowdrifts</string>
+    <string name="notif_text_off">Snow is stopped</string>
+    <string name="notif_stop">Stop</string>
+    <string name="notif_start">Start</string>
+    <string name="notif_settings">Settings</string>
+</resources>
