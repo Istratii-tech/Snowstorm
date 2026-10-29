@@ -175,6 +175,30 @@ public class SnowService extends AccessibilityService
         getSystemService(NotificationManager.class).cancel(NOTIF_ID);
     }
 
+    /**
+     * Полный выход: убираем снег и уведомление, отключаем службу в настройках спец. возможностей
+     * (иначе система сразу поднимет её снова) и завершаем процесс.
+     */
+    void exitApp() {
+        if (Build.VERSION.SDK_INT >= 31) performGlobalAction(GLOBAL_ACTION_DISMISS_NOTIFICATION_SHADE);
+        DriftStore s = store;
+        shutdown();
+        s.flush();
+        // В следующий раз, когда службу включат, снег пойдёт сразу.
+        prefs.edit().putBoolean(Prefs.ENABLED, true).commit();
+        disableSelf();
+        killApp(this);
+    }
+
+    /** Закрыть окна приложения (и карточку в «Недавних»), убрать уведомление, завершить процесс. */
+    static void killApp(Context c) {
+        android.app.ActivityManager am = c.getSystemService(android.app.ActivityManager.class);
+        if (am != null) for (android.app.ActivityManager.AppTask t : am.getAppTasks()) t.finishAndRemoveTask();
+        c.getSystemService(NotificationManager.class).cancelAll();
+        new Handler(Looper.getMainLooper()).postDelayed(
+                () -> android.os.Process.killProcess(android.os.Process.myPid()), 300);
+    }
+
     @Override
     public void onInterrupt() {}
 
@@ -230,6 +254,8 @@ public class SnowService extends AccessibilityService
                 new Intent(this, ToggleReceiver.class).setAction(ToggleReceiver.ACTION_TOGGLE), imm);
         PendingIntent repost = PendingIntent.getBroadcast(this, 2,
                 new Intent(this, ToggleReceiver.class).setAction(ToggleReceiver.ACTION_REPOST), imm);
+        PendingIntent exit = PendingIntent.getBroadcast(this, 4,
+                new Intent(this, ToggleReceiver.class).setAction(ToggleReceiver.ACTION_EXIT), imm);
         PendingIntent open = PendingIntent.getActivity(this, 3,
                 new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK), imm);
         Icon icon = Icon.createWithResource(this, R.drawable.ic_stat_snow);
@@ -251,7 +277,8 @@ public class SnowService extends AccessibilityService
                 .setContentIntent(open)
                 .setDeleteIntent(repost)
                 .addAction(new Notification.Action.Builder(icon, getString(on ? R.string.notif_stop : R.string.notif_start), toggle).build())
-                .addAction(new Notification.Action.Builder(icon, getString(R.string.notif_settings), open).build());
+                .addAction(new Notification.Action.Builder(icon, getString(R.string.notif_settings), open).build())
+                .addAction(new Notification.Action.Builder(icon, getString(R.string.notif_exit), exit).build());
         if (Build.VERSION.SDK_INT >= 31) {
             b.setForegroundServiceBehavior(Notification.FOREGROUND_SERVICE_IMMEDIATE);
         }

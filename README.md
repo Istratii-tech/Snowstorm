@@ -25,10 +25,14 @@ Requests and questions: issues of this repository or `https://t.me/istratii_tech
   edge and hides while the notification shade is open.
 - **Clearing snowdrifts:** shake the phone, or swipe the app up from the bottom edge (to
   Home or Recents) and the snowdrift flies apart in snowballs.
-- **Notification** with **Stop / Start** and **Settings**.
+- **Notification** with **Stop / Start**, **Settings** and **Exit**.
+- **Exit** (in the notification or at the bottom of Settings) closes Snowstorm completely:
+  snow, notification and background process. Snowdrifts are kept. Android keeps an enabled
+  accessibility service running, so Exit also turns the service off; to start again, turn
+  Snowstorm on in Accessibility settings.
 - **Settings:** falling speed, number of snowflakes, snowdrift height, **Storm mode** (heavy
   snow at an angle with gusts of wind), **Battery saver** (30 fps instead of 60), melt
-  all snowdrifts.
+  all snowdrifts, exit.
 - **English and Russian:** follows the system language, or pick one in Settings → Apps →
   Snowstorm → Language (Android 13+).
 - Snow stops completely while the screen is off.
@@ -94,9 +98,13 @@ Needs a JDK (11+) and the Android SDK with `platforms/android-33`, `build-tools/
   постепенно уходят;
 - свой сугроб у каждого приложения; растёт только у открытого, сохраняется между запусками;
 - убрать сугроб: встряхнуть телефон или смахнуть приложение вверх от нижнего края;
-- уведомление с кнопками «Остановить/Запустить» и «Настроить»;
+- уведомление с кнопками «Остановить/Запустить», «Настроить» и «Выйти»;
+- «Выйти» (в уведомлении или внизу настроек) полностью закрывает Snowstorm: снег, уведомление
+  и фоновый процесс. Сугробы сохраняются. Включённую службу спец. возможностей Android держит
+  запущенной, поэтому выход выключает и её; чтобы запустить снова, включите Snowstorm в
+  «Спец. возможностях»;
 - настройки: скорость, количество снежинок, высота сугробов, режим «Шторм», экономный режим
-  (30 к/с), «Растопить все сугробы»;
+  (30 к/с), «Растопить все сугробы», «Выйти»;
 - русский и английский: по языку системы или отдельно в Настройки → Приложения → Snowstorm → Язык.
 
 **Приватность:** у приложения нет разрешения на интернет. Служба спец. возможностей только рисует

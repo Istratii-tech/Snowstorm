@@ -81,6 +81,14 @@ final class DriftStore {
         io.execute(() -> write(names, data));
     }
 
+    /** Перед выходом: дождаться записи на диск (не дольше секунды). */
+    void flush() {
+        io.shutdown();
+        try {
+            io.awaitTermination(1, java.util.concurrent.TimeUnit.SECONDS);
+        } catch (InterruptedException ignored) {}
+    }
+
     private void write(ArrayList<String> names, ArrayList<float[]> data) {
         File tmp = new File(file.getPath() + ".tmp");
         try (DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(tmp)))) {

@@ -2,6 +2,7 @@ package com.personal.snowdrift;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -107,6 +108,18 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
             Toast.makeText(this, R.string.melted, Toast.LENGTH_SHORT).show();
         });
         col.addView(melt, lpTop(14));
+
+        Button exit = button(getString(R.string.exit_app), 0x33FF7C7C);
+        exit.setOnClickListener(v -> new AlertDialog.Builder(this, android.R.style.Theme_DeviceDefault_Dialog_Alert)
+                .setTitle(R.string.exit_title)
+                .setMessage(R.string.exit_text)
+                .setPositiveButton(R.string.exit_app, (d, w) -> {
+                    if (SnowService.instance != null) SnowService.instance.exitApp();
+                    else SnowService.killApp(this);
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show());
+        col.addView(exit, lpTop(14));
 
         ScrollView sv = new ScrollView(this);
         sv.setFillViewport(true);

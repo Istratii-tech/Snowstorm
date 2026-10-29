@@ -21,6 +21,9 @@
     <string name="how_text">• Встряхните телефон — сугроб текущего приложения разлетится.\n• Или смахните приложение вверх от нижнего края (домой или в «Недавние») — сугроб тоже разлетится.\n• Сугроб растёт только у открытого приложения.</string>
     <string name="melt_all">Растопить все сугробы</string>
     <string name="melted">Все сугробы растаяли</string>
+    <string name="exit_app">Выйти из Snowstorm</string>
+    <string name="exit_title">Выйти из Snowstorm?</string>
+    <string name="exit_text">Снег остановится, уведомление исчезнет, приложение полностью закроется вместе со службой. Сугробы сохранятся. Чтобы запустить снова, включите Snowstorm в Настройки → Спец. возможности → Установленные приложения.</string>
 
     <string name="notif_title_on">Идёт снег</string>
     <string name="notif_title_off">Snowstorm на паузе</string>
@@ -30,4 +33,5 @@
     <string name="notif_stop">Остановить</string>
     <string name="notif_start">Запустить</string>
     <string name="notif_settings">Настроить</string>
+    <string name="notif_exit">Выйти</string>
 </resources>

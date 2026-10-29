@@ -22,6 +22,9 @@
     <string name="how_text">• Shake the phone and the current app\'s snowdrift flies apart.\n• Or swipe the app up from the bottom edge (to Home or Recents) and it flies apart too.\n• A snowdrift only grows on the app that is open.</string>
     <string name="melt_all">Melt all snowdrifts</string>
     <string name="melted">All snowdrifts have melted</string>
+    <string name="exit_app">Exit Snowstorm</string>
+    <string name="exit_title">Exit Snowstorm?</string>
+    <string name="exit_text">Snow stops, the notification goes away and the app closes completely, the service included. Snowdrifts are kept. To start again, turn Snowstorm on in Settings → Accessibility → Installed apps.</string>
 
     <string name="notif_title_on">It\'s snowing</string>
     <string name="notif_title_off">Snowstorm is paused</string>
@@ -31,4 +34,5 @@
     <string name="notif_stop">Stop</string>
     <string name="notif_start">Start</string>
     <string name="notif_settings">Settings</string>
+    <string name="notif_exit">Exit</string>
 </resources>
